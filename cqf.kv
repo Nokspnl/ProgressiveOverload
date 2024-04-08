@@ -19,80 +19,288 @@
             text: 'BBH B'
             on_press: root.manager.current = 'screen5'
 
+
 <Screen1>:
-    BoxLayout:
-        orientation: 'vertical'
-        padding: 10
-        spacing: 10
-
+    GridLayout:
+        cols:1
         Label:
-            text: 'CTQ A'
-            size_hint_y: None
-            height: 25
-
+            text:'CTQ A'
+            size_hint_y: 0.1
         ScrollView:
             GridLayout:
-                cols: 5
+                size_hint_x:1
                 size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 30
+                cols: 1
                 spacing: 10
                 padding: 10
 
-                # Create buttons
-                Button:
-                    text: 'Button 1'
-                Button:
-                    text: 'Button 2'
-                Button:
-                    text: 'Button 3'
-                Button:
-                    text: 'Button 4'
-                Button:
-                    text: 'Button 5'
-                Button:
-                    text: 'Button 6'
-                Button:
-                    text: 'Button 7'
-                Button:
-                    text: 'Button 8'
-                Button:
-                    text: 'Button 9'
-                Button:
-                    text: 'Button 10'
-                Button:
-                    text: 'Button 11'
-                Button:
-                    text: 'Button 12'
-                Button:
-                    text: 'Button 13'
-                Button:
-                    text: 'Button 14'
-                Button:
-                    text: 'Button 15'
-                Button:
-                    text: 'Button 16'
-                Button:
-                    text: 'Button 17'
-                Button:
-                    text: 'Button 18'
-                Button:
-                    text: 'Button 19'
-                Button:
-                    text: 'Button 20'
+                Label:
+                    text:'Incline Dumbbell Press'
+                    size_hint_y: 0.1
+                GridLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 30
+                    cols: 3
+                    rows: 5
+                    spacing: 10
+                    padding: 10
 
+                    Label:
+                        text: 'Set'
+                    Label:
+                        text: 'Load'
+                    Label:
+                        text: 'Reps'
+                    Label:
+                        text: '1'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '2'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '3'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '4'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+
+                Label:
+                    text:'Dips (C)'
+                    size_hint_y: 0.1
+                GridLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 30
+                    cols: 3
+                    rows: 5
+                    spacing: 10
+                    padding: 10
+
+                    Label:
+                        text: 'Set'
+                    Label:
+                        text: 'Load'
+                    Label:
+                        text: 'Reps'
+                    Label:
+                        text: '1'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '2'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '3'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '4'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                Label:
+                    text:'Cable Fly'
+                    size_hint_y: 0.1
+                GridLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 30
+                    cols: 3
+                    rows: 5
+                    spacing: 10
+                    padding: 10
+
+                    Label:
+                        text: 'Set'
+                    Label:
+                        text: 'Load'
+                    Label:
+                        text: 'Reps'
+                    Label:
+                        text: '1'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '2'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '3'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '4'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                Label:
+                    text:'Skullcrushers'
+                    size_hint_y: 0.1
+                GridLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 30
+                    cols: 3
+                    rows: 5
+                    spacing: 10
+                    padding: 10
+
+                    Label:
+                        text: 'Set'
+                    Label:
+                        text: 'Load'
+                    Label:
+                        text: 'Reps'
+                    Label:
+                        text: '1'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '2'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '3'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '4'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+
+                Label:
+                    text:'V Bar Pressdowns'
+                    size_hint_y: 0.1
+                GridLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 30
+                    cols: 3
+                    rows: 5
+                    spacing: 10
+                    padding: 10
+
+                    Label:
+                        text: 'Set'
+                    Label:
+                        text: 'Load'
+                    Label:
+                        text: 'Reps'
+                    Label:
+                        text: '1'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '2'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '3'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '4'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                Label:
+                    text:'Side Lateral Raises'
+                    size_hint_y: 0.1
+                GridLayout:
+                    size_hint_x:1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: 30
+                    cols: 3
+                    rows: 5
+                    spacing: 10
+                    padding: 10
+
+                    Label:
+                        text: 'Set'
+                    Label:
+                        text: 'Load'
+                    Label:
+                        text: 'Reps'
+                    Label:
+                        text: '1'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '2'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '3'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
+                    Label:
+                        text: '4'
+                    TextInput:
+                        text: ''
+                    TextInput:
+                        text: ''
         Button:
             text: 'Go back'
             size_hint_y: None
-            height: 50
+            height: dp(35)
             on_press: root.manager.current = 'Home'
-
-
-
-
-
-
-
-
-
 
 
 

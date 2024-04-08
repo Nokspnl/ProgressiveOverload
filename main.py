@@ -1,25 +1,23 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.lang import Builder
+from kivy.uix.label import Label
+from kivy.uix.button import Button
 
-# Define the screen classes
+#Define the screen classes
 class Home(Screen):
     pass
-
 class Screen1(Screen):
     pass
-
 class Screen2(Screen):
     pass
-
 class Screen3(Screen):
     pass
-
 class Screen4(Screen):
     pass
-
 class Screen5(Screen):
     pass
+
 
 class MyApp(App):
     def build(self):
