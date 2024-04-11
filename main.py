@@ -6,6 +6,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
+from kivy.uix.scrollview import ScrollView
 
 # Defining the variable parameters of the program
 Split = [
@@ -14,6 +15,15 @@ Split = [
     "Chest, Triceps, Shoulders ",
     "Chest, Triceps, Quads B",
     "Biceps, Back Hams B",
+]
+
+CTQ_A = [
+    "Incline Dumbbell Press",
+    "Dips (C)",
+    "Skullcrusher",
+    "V Bar Pushdown",
+    "Leg Press",
+    "Leg Extension",
 ]
 
 
@@ -56,18 +66,50 @@ class ScreenManagement(ScreenManager):
             screen_name = day
             screen = Screen(name=screen_name)
             # Outer BoxLayout
-            outer_layout = BoxLayout(orientation="vertical")
+            outer_layout = GridLayout(cols=1, spacing=10)
             screen.add_widget(outer_layout)
             # Label
-            label = Label(text=day, font_size=20)
+            label = Label(text=day, size_hint_y=0.1)
             outer_layout.add_widget(label)
-            # Inner GridLayout for text inputs
-            inner_grid = GridLayout(cols=4, spacing=10)
-            outer_layout.add_widget(inner_grid)
-            # Populate inner grid with TextInputs
-            for _ in range(16):
-                text_input = TextInput(text="", multiline=False)
-                inner_grid.add_widget(text_input)
+            # Scroll View
+            scroll_view = ScrollView(
+                do_scroll_x=False,
+                do_scroll_y=True,
+            )
+            outer_layout.add_widget(scroll_view)
+            # Grid
+            sv_grid = GridLayout(
+                cols=1,
+                spacing=10,
+                padding=10,
+                size_hint_x=1,
+                size_hint_y=None,
+                row_default_height=150,
+            )
+            sv_grid.bind(minimum_height=sv_grid.setter("height"))
+            scroll_view.add_widget(sv_grid)
+
+            # Loop that: for each exercise, create exercise label, create grid with textinput and labels, next exercise
+            for exercise in CTQ_A:
+                # Label
+                exercise_label = Label(text=exercise, size_hint_y=None, height=50)
+                sv_grid.add_widget(exercise_label)
+                # Grid
+                inner_grid = GridLayout(
+                    cols=3, spacing=10, padding=10, row_default_height=30
+                )
+                sv_grid.add_widget(inner_grid)
+
+                # Sets, Reps, Load Labels
+                srl = ["Sets", "Reps", "Load"]
+                for term in srl:
+                    label = Label(text=term, font_size=16)
+                    inner_grid.add_widget(label)
+
+                for _ in range(15):
+                    text_input = TextInput(text="", multiline=False, halign="center")
+                    inner_grid.add_widget(text_input)
+
             # Home button
             home_button = Button(text="Home", font_size=16, size_hint=(1, 0.1))
             home_button.bind(on_press=switch_screen)
